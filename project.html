@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pricing Page</h1>
+        <label for="currencySelector">Select Currency:</label>
+        <select id="currencySelector" onchange="updateCurrency()">
+            <option value="" disabled-selected>--Please choose an option--</option>
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+        </select>
+        <div class="plans">
+            <div class="plan">
+                <p class="title">Basic</p>
+                <p class="price" data-currency="INR"><sup>Rs.</sup><span></span><sub>/month</sub></p>
+                <ul class="features">
+                    <li>10GB Storage</li>
+                    <li>1 User</li>
+                    <li class="lim">No Support</li>
+                </ul>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="plan">
+                <p class="title">Standard</p>
+                <p class="price" data-currency="INR"><sup>Rs.</sup><span></span><sub>/month</sub></p>
+                <ul class="features">
+                    <li>50GB Storage</li>
+                    <li>5 Users</li>
+                    <li class="lim">Phone &amp; Email Support</li>
+                </ul>
+                <button class="btn">Buy Now</button>
+            </div>
+            <div class="plan">
+                <p class="title">Premium</p>
+                <p class="price" data-currency="INR"><sup>Rs.</sup><span></span><sub>/month</sub></p>
+                <ul class="features">
+                    <li>100GB Storage</li>
+                    <li>10 Users</li>
+                    <li class="lim">24/7 Support</li>
+                </ul>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="project.js" >
+
+    </script>
+    
+</body>
+</html>
