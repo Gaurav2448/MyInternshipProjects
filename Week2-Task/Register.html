@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: url('i2.jpg') no-repeat;
+			background-size: cover;
+			
+		}
+		.container{
+			position: relative;
+			width: 400px;
+			height: 500px;
+			border: 2px solid grey;
+			border-radius: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		.container .formb{
+			width: 100%;
+			padding: 40px;
+		}
+		.formb h2{
+			font-size: 2em;
+			text-align: center;
+			font-weight: 800;
+		}
+		.inputb{
+			position: relative;
+			width: 100%;
+			height: 50px;
+			border-bottom: 2px solid black;
+			margin: 30px 0;
+		}
+		.inputb label{
+			position:absolute;
+			top: 50%;
+			left: 5px;
+			transform: translateY(-50%);
+			font-size: 1em;
+			font-weight: 500;
+			pointer-events: none;
+			transition: 50ms;
+
+		}
+		.inputb input:focus~label,.inputb input:valid~label{
+			top: -5px;
+		}
+		.inputb input{
+			width: 100%;
+			height: 100%;
+			background: transparent;
+			border: none;
+			outline: none;
+			font-size: 1em;
+			padding-right: 32px;
+			padding-left: 5px;
+		}
+		.inputb .icon{
+			position: absolute;
+			right: 8px;
+			font-size: 1.2em;
+			line-height: 57px;
+		}
+		.accept{
+			font-size: 0.8em;
+			margin-top: -15px;
+			margin-bottom: 15px;
+		}
+		.accept input{
+			margin-right: 3px;
+			accent-color: black;
+		}
+		.accept a{
+			color: black;
+			text-decoration: none;
+		}
+		.accept a:hover{
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		.btn{
+			width: 100%;
+			height: 40px;
+			color: white;
+			background-color: black;
+			border: none;
+			cursor: pointer;
+			font-size: medium;
+			font-weight: bold ;
+			margin-top: 20px;
+			border-radius: 20px;
+		}
+		
+		.btn:hover{
+    transform: scale(1.1);
+	font-size: large;
+
+}
+		@media(max-width:768px)  {
+    .container{
+        height: auto;
+		width: auto;
+    }
+    
+}
+		footer{
+			position: absolute;
+			bottom: 0;
+			align-items: center;
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/24cdd67282.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+
+		function validate() {
+			if (document.f1.uname.value=="")
+			{
+				alert("Please Enter the Userame");
+				document.f1.uname.focus();
+				return false;
+			}
+
+			if (document.f1.em.value=="")
+			{
+				alert("Please Enter the Email");
+				document.f1.em.focus();
+				return false;
+			}
+
+			if (document.f1.pass.value=="")
+			{
+				alert("Please Enter the password");
+				document.f1.pass.focus();
+				return false;
+			}
+
+			if (document.f1.pass1.value=="")
+			{
+				alert("Please Enter the confirm password");
+				document.f1.pass1.focus();
+				return false;
+			}
+			
+			var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+			if(!document.f1.pass.value.match(decimal)){
+				alert("password must between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character");
+				document.f1.pass.focus();
+				return false;
+			}
+
+			if(document.f1.pass.value!=document.f1.pass1.value){
+				alert("Password mismatch");
+				document.f1.pass1.focus();
+				return false;
+			}
+
+			if(document.f1.check.checked==false){
+				alert("agree to terms & conditions")
+				return false;
+			}
+
+
+		}
+		
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="formb">
+			<h2>Register/Sign up</h2>
+			<form name="f1" action="suceed.html">
+				<div class="inputb">
+					<span class="icon"><i class="fa-solid fa-user"></i></span>
+					<input type="text" name="uname" required>
+					<label>Username</label>
+				</div>
+				<div class="inputb">
+					<span class="icon"><i class="fa-solid fa-envelope"></i></span>
+					<input type="email" name="em" required>
+					<label>Email</label>
+				</div>
+				<div class="inputb">
+					<span class="icon"><i class="fa-solid fa-lock"></i></span>
+					<input type="password" name="pass" required>
+					<label>Password</label>
+				</div>
+				<div class="inputb">
+					<span class="icon"><i class="fa-solid fa-lock"></i></span>
+					<input type="password" name="pass1" required>
+					<label>Confirm Password</label>
+				</div>
+				<div class="accept">
+					<label>
+						<input type="checkbox" name="check">
+						<a href="#">I accept terms & conditions</a> 
+					</label>
+				</div>
+				<input type="submit" value="Register" class="btn" onclick="return validate()">
+			</form>
+		</div>
+	</div>
+
+	<footer>
+Image by <a href="https://www.freepik.com/free-photo/elevated-view-laptop-stationeries-yellow-backdrop_2886997.htm#query=registration%20background&position=5&from_view=keyword&track=ais&uuid=ccada3e4-9cce-48f8-b81c-b098f533f5d2">Freepik</a>
+</footer>
+
+</body>
+</html>
