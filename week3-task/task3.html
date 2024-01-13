@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link rel="stylesheet" type="text/css" href="task3.css"><!--External css for styling-->
+	<script src="https://kit.fontawesome.com/24cdd67282.js" crossorigin="anonymous"></script><!--Font Awesome icon library-->
+    <script src="JQuery.js"></script><!--JQoery Library-->
+    <style>
+
+    </style>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <nav>
+        <!--tooggle button for small screen-->
+        <label for="check" class="bar" id="checkboxLabel">
+            <i class="fa-solid fa-bars" id="bars"></i>
+            <i class="fa-regular fa-circle-xmark" id="xmark"></i>
+        </label>
+        <!-- Hidden checkbox for navigation toggle -->
+        <input type="checkbox" id="check">
+        <!-- Website title -->
+        <div class="title">T-wears</div>
+         <!-- Search box -->
+        <div class="searchbox">
+            <input type="search" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <!-- Navigation links -->
+        <ol id="oli">
+            <li><a href="#about">About</a></li>
+            <li id="parent">
+                <a href="#" id="cli">Categories
+                <i class="fa-solid fa-chevron-down" id="down"></i>
+                </a>
+                <ol id="oli1">
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Kids</a></li>
+                </ol>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ol>
+         <!-- Shopping cart icon -->
+        <i class="fa-solid fa-cart-shopping cart"></i>
+        
+    </nav>
+
+    <!-- Main Product Section -->
+    <section id="main">
+        <div class="container">
+            <!--  Product containers  -->
+            <div class="image-container">
+                <div class="child">
+                    <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic1.webp" alt="Your Image" width="280px" height="190px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: Red</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+            <div class="child">
+                <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic2.jpg" alt="Your Image" width="280px" height="190px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: Red</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+            <div class="child">
+                <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic3.jpg" alt="Your Image" width="280px" height="190px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: White</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+            <div class="child">
+                <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic4.webp" alt="Your Image" width="280px" height="190px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: Blue</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+            <div class="child">
+                <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic5.jpg" alt="Your Image" width="280px" height="190px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: White</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+            <div class="child">
+                <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic6.jpg" alt="Your Image" width="280px" height="190px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: Yellow</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+                <div class="child">
+                        <div class="icon"><span class="like-icon">❤</span></div>
+                        <img src="pics/pic7.jpg" alt="Your Image" width="280px" height="200px">
+                        
+                        <h3>Tshirt</h3>
+                        <h4>&#8377; 500</h4>
+                        <div class="btnclass">
+                            <button>Add to cart</button>
+                            <button>Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="hidden-div">
+                        <p>Color: Yellow</p>
+                        <br><br>
+                        <p>Material: Cotton</p>
+                        <br><br>
+                        <p>Size:Small, Medium, Large</p>
+                      </div>
+                </div>
+
+            <div class="image-container">
+            <div class="child">
+                <div class="icon"><span class="like-icon">❤</span></div>
+                    <img src="pics/pic8.jpg" alt="Your Image" width="280px" height="200px">
+                    
+                    <h3>Tshirt</h3>
+                    <h4>&#8377; 500</h4>
+                    <div class="btnclass">
+                        <button>Add to cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <p>Color: White, Black, Red</p>
+                    <br><br>
+                    <p>Material: Cotton</p>
+                    <br><br>
+                    <p>Size:Small, Medium, Large</p>
+                  </div>
+            </div>
+
+            <div class="image-container">
+                <div class="child">
+                    <div class="icon"><span class="like-icon">❤</span></div>
+                        <img src="pics/pic9.webp" alt="Your Image" width="250px" height="200px">
+                        
+                        <h3>Tshirt</h3>
+                        <h4>&#8377; 500</h4>
+                        <div class="btnclass">
+                            <button>Add to cart</button>
+                            <button>Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="hidden-div">
+                        <p>Color: Coral</p>
+                        <br><br>
+                        <p>Material: Cotton</p>
+                        <br><br>
+                        <p>Size:Small, Medium, Large</p>
+                      </div>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Navigation for Product Slider -->
+    <div class="btn1">
+        <button><i class="fa-solid fa-arrow-left"></i> &nbsp;prev</button>
+        <button>next &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="abt_section">
+            <h1>About</h1>
+            <br>
+            <h2>Welcome to Twears - Where Style Meets Sustainability!</h2>
+            <p>At Twears, we believe that fashion should be as mindful as it is stylish. We are more than just a clothing brand; we are a movement towards a more sustainable and conscious way of dressing.</p>
+            <br><br>
+            <h2>Our Mission: Redefining Fashion for a Greener Tomorrow</h2>
+            <p>In a world where fast fashion dominates, we stand against the tide. Our mission is to offer you trendy, eco-friendly, and ethically produced clothing that not only looks good but also does good for the planet. We are committed to reducing our environmental footprint and promoting fair labor practices throughout our supply chain.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact" >
+            <h1>Contact Us</h1>
+            <p>At Twears, we value open communication and are here to assist you. Whether you have questions about our sustainable practices, need help with an order, or simply want to share your thoughts, we're ready to connect with you.</p>
+        </div>
+        <div class="contact" >
+            <h1>Customer Support:</h1>
+            <p>For any inquiries regarding your order, product information, or assistance with our website, our customer support team is here to help.</p>
+            <ul >
+                <li>-Email: support@twears.com</li>
+                <li>-Phone: 9852347598</li>
+                <li>-Live Chat: Available on our website during business hours.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Floating Message Icon -->
+    <div id="msg"><i class="fa-solid fa-message"></i></i></div>
+
+    <script>
+        $(document).ready(function () {
+         // Functionality for toggling the navigation menu on small screens
+            $('#checkboxLabel').click(function () {
+                // Toggle the visibility of the navigation menu
+                $("#oli").slideToggle(200);
+                var checkbox = $('#check');
+                var bar = $('.bar');
+                
+                // Toggle the state of the checkbox and add/remove checked class to the toggle button
+                checkbox.prop('checked', !checkbox.prop('checked'));
+                bar.toggleClass('checked');
+
+            });
+
+            // Functionality for toggling the dropdown in the Categories menu
+            $('#cli').click(function(){
+                // Toggle the visibility of the dropdown in the Categories menu
+                $("#oli1").slideToggle(200);
+                $("#down").toggleClass("arrow")
+			})
+
+            // Functionality for toggling the filled state of the like icon
+            $('.like-icon').on('click', function() {
+                // Toggle the filled class on the like icon
+                $(this).toggleClass('filled');
+            });
+            
+        });
+    </script>
+    
+</body>
+</html>
