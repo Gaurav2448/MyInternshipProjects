@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/24cdd67282.js" crossorigin="anonymous"></script>
+
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #FFF9DE;
+    }
+    h2{
+        color: #FFF9DE;
+        font-weight: 800;
+        font-size: 40px;
+    }
+
+    #todoList {
+      max-width: 400px;
+      margin: 80px auto;
+      border: 1px solid black;
+      background-color:#FF6969;
+      border-radius: 20px;
+      box-shadow: 10px 8px 8px gray;
+    }
+
+    #taskInput {
+      width: 70%;
+      padding: 8px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: none;
+      margin-right: 10px;
+      outline-color: #7286D3;
+      font-size: 15px;
+    }
+
+    #btadd{
+      padding: 8px 20px 8px;
+      border-radius: 15px;
+      background-color: #7286D3;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #btadd:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .head{
+        margin-bottom: 30px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #tasks li {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      height: 48px;
+      margin: 0 20px 0;
+    }
+
+    #tasks li p {
+      width: 65%;
+      border: none;
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid black;
+      margin:0 10px 0;
+
+    }
+
+    .btn {
+      margin: 20px 5px 20px;
+      padding: 6px 8px 6px;
+      border-radius: 20px;
+      background-color: #FFF9DE;
+      color: #7286D3;
+      border: none;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .btn:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .btn i{
+        font-size: 20px;
+    }
+
+    .editInput {
+        width: 65%;
+      border: none;
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid black;
+      outline: none;
+      margin:0 10px 0;
+      background-color: #FF6969;
+    }
+    .completed{
+        text-decoration: line-through;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="todoList">
+    <h2>To-Do List</h2>
+    <div class="head">
+      <input type="text" id="taskInput" placeholder="Add a new task">
+      <button onclick="addTask()" id="btadd">Add</button>
+    </div>
+
+    <ul id="tasks">
+      <!-- Tasks will be added dynamically here -->
+    </ul>
+  </div>
+
+  <script>
+    // Load tasks from local storage when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+      loadTasks();
+    });
+
+    function addTask() {
+      var taskInput = document.getElementById("taskInput");
+      var taskText = taskInput.value.trim();
+
+      if (taskText !== "") {
+        var tasksList = document.getElementById("tasks");
+
+        var li = document.createElement("li");
+        
+        li.innerHTML = `<button onclick="completeTask(this)" class="btn"><i class="fa-regular fa-square-check"></i></button>
+                        <p>${taskText}</p> 
+                        <input type="text" class="editInput" style="display:none;" />
+                        <button onclick="editTask(this)" class="btn"><i class="fa-solid fa-pen-to-square" id="ficon"></i></button>
+                        <button onclick="deleteTask(this)" class="btn"><i class="fa-solid fa-trash-can"></i></button>
+                        `;
+
+        tasksList.insertBefore(li, tasksList.firstChild);
+        taskInput.value = ""; // Clear the input field
+
+        // Save tasks to local storage
+        saveTasks();
+      }
+    }
+
+    function editTask(button) {
+      oclick(button);
+      var li = button.parentNode;
+      var p = li.querySelector("p");
+      var input = li.querySelector(".editInput");
+
+      if (input.style.display === "none") {
+        p.style.display = "none";
+        input.style.display = "inline-block";
+        input.value = p.textContent;
+        input.focus();
+      } else {
+        p.style.display = "inline-block";
+        input.style.display = "none";
+        p.textContent = input.value.trim();
+
+        // Save tasks to local storage
+        saveTasks();
+      }
+    }
+
+    function deleteTask(button) {
+      var li = button.parentNode;
+      var tasksList = li.parentNode;
+      tasksList.removeChild(li);
+
+      // Save tasks to local storage
+      saveTasks();
+    }
+
+    function saveTasks() {
+      var tasksList = document.getElementById("tasks").innerHTML;
+      localStorage.setItem("tasks", tasksList);
+    }
+
+    function loadTasks() {
+      var tasksList = localStorage.getItem("tasks");
+      if (tasksList) {
+        document.getElementById("tasks").innerHTML = tasksList;
+      }
+    }
+
+    function oclick(button) {
+      var li = button.parentNode;
+      var element = li.querySelector("#ficon");
+
+      if (element.classList.contains("fa-pen-to-square") == true) {
+        element.classList.remove("fa-pen-to-square");
+        element.classList.add("fa-check");
+      } else {
+        element.classList.remove("fa-check");
+        element.classList.add("fa-pen-to-square");
+      }
+    }
+
+    function completeTask(button){
+        var li = button.parentNode;
+       var p = li.querySelector("p");
+       var inputText = li.querySelector('.editInput');
+       p.classList.toggle("completed");
+       var i=button.querySelector("i");
+       if(i.classList.contains("fa-regular")){
+           i.classList.remove("fa-regular");
+           i.classList.add("fa-solid");
+           inputText.disabled = true;
+        }
+        else{
+            i.classList.remove("fa-solid");
+           i.classList.add("fa-regular");
+           inputText.disabled = false;
+        }
+        saveTasks();
+    }
+  </script>
+
+</body>
+</html>
